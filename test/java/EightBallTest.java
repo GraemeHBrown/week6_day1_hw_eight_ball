@@ -19,4 +19,17 @@ public class EightBallTest {
     public void eightBallHasThreeStartingNumbers(){
         assertEquals(3, eightball.getNumberCount());
     }
+
+    @Test
+    public void numbersListSameAsPassedToConstructor(){
+        ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(1,2,8));
+        eightball = new EightBall(numbers);
+        assertEquals(numbers, eightball.getNumbers());
+    }
+
+    @Test
+    public void getRandomReturnsNumberFromList(){
+        int randomNumber = eightball.getRandom();
+        assertEquals(true, eightball.getNumbers().contains(randomNumber));
+    }
 }
