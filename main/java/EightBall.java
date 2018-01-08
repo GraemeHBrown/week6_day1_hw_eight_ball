@@ -2,24 +2,30 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class EightBall {
-    private ArrayList<Integer> numbers;
+    private ArrayList<String> answers;
 
-    public EightBall(ArrayList<Integer> numbersToAdd){
-        this.numbers = new ArrayList<Integer>(numbersToAdd);
+    public EightBall(ArrayList<String> answersToAdd){
+        this.answers = new ArrayList<String>(answersToAdd);
     }
 
-    public int getNumberCount() {
-        return this.numbers.size();
+    public int getAnswerCount() {
+        return this.answers.size();
     }
 
-    public ArrayList<Integer> getNumbers() {
-        return numbers;
+    public ArrayList<String> getAnswers() {
+        return answers;
     }
 
-    public int getRandom(){
-        Collections.shuffle(numbers);
-        return numbers.get(0);
+    public String getRandomAnswer(){
+        Collections.shuffle(answers);
+        return answers.get(0);
     }
 
+    public void add(String answerToAdd) {
+       answers.add(answerToAdd);
+    }
 
+    public void remove(String answerToRemove){
+        answers.remove(answerToRemove);
+    }
 }
